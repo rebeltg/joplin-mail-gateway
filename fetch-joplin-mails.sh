@@ -18,7 +18,7 @@ echo "Start: `date`"
 
 NEW_MAIL=0
 
-fetchMails "$POP3_USER" "$POP3_PW" "$MAILDIR"
+mbsync -a
 
 find "$MAILDIR/new" -type f -print0 | sort -z | while read -d $'\0' M
 do

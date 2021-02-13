@@ -49,12 +49,12 @@ that it is easily searchable in Joplin.
 
     Tested with `tesseract 3.04.01`
 
-5. [**getmail**](http://pyropus.ca/software/getmail/) must be installed 
+5. [**mbsync**](https://isync.sourceforge.io/mbsync.html) must be installed 
 
         sudo apt-get update
-        sudo apt-get install getmail4
+        sudo apt-get install isync
 
-    Tested with `getmail_fetch 4.48.0`
+    Tested with `isync 1.3.0`
 
 6. [**ripmime**](https://github.com/inflex/ripMIME) must be installed
 
@@ -96,18 +96,20 @@ that it is easily searchable in Joplin.
         
 5. Change default configuration by editing `config.sh`
 
-        readonly POP3_USER="your-email-user@your-provider"
-        readonly POP3_PW="your-super-secret-pop3-pw"
-        readonly POP3_HOST="pop.gmail.com"
-        readonly POP3_PORT=995
         readonly DEFAULT_TITLE_PREFIX="Neue Notiz"
         readonly DEFAULT_NOTEBOOK="Import"
 
-7. Test your configuration
+6. Create isync configuration file
+
+        cp .mbsyncrc.sample ~/.mbsyncrc
+
+7. Change account information in `.mbsyncrc`
+   
+8. Test your configuration
         
         ./fetch-joplin-mails.sh  
         
-8. Add cron job
+9.  Add cron job
 
         crontab -e
 

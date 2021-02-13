@@ -1,0 +1,18 @@
+Maildirstore joplin-mailbox
+path /home/'USER'/joplin-mailbox/
+
+
+IMAPAccount joplin
+host YOUR_SERVER
+user YOUR_USER_NAME
+pass PASSWORD
+SSLtype STARTTLS
+
+IMAPStore joplin-remote
+Account joplin
+
+Channel joplin
+master :joplin-remote:
+slave :joplin-mailbox:
+create slave
+sync pull new renew flags
